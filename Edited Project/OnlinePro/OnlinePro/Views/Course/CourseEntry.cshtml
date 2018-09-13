@@ -1,0 +1,57 @@
+﻿
+@model Models.Course
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CourseEntry</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+<div class="container">
+    <form method="post">
+        <div class="form-horizontal">
+            <h1>Course Information</h1>
+            <div class="form-group">
+                <label>Organization</label>
+                @Html.TextBoxFor(c => c.OrganizationId,new {@class="form-control"})
+            </div>
+            <div class="form-group ">
+                <label>Name</label>
+                @Html.TextBoxFor(c => c.Name,new {@class="form-control"})
+            </div>
+            <div class="form-group ">
+                <label>Code</label>
+                @Html.TextBoxFor(c => c.Code, new { @class = "form-control" })
+            </div>
+            <div class="form-group ">
+                <label>Duration</label>
+                @Html.TextBoxFor(c => c.Duration, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group ">
+                <label>Credit</label>
+                @Html.TextBoxFor(c => c.Credit, new { @class = "form-control" })
+            </div>
+            <div class="form-group ">
+                <label>Outline</label>
+                @Html.TextBoxFor(c => c.Outline, new { @class = "form-control" })
+            </div>
+            <div class="form-group ">
+                <label>Tags</label>
+                @Html.TextBoxFor(c => c.Tags, new {@class="form-control"})
+            </div>
+            <div class="form-group ">
+                <button type="submit" class="btn btn-success"></button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
