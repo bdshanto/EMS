@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,20 +10,19 @@ using System.Web.Mvc;
 
 namespace Models
 {
-   public class Course
-    {
+   public class Course : IEnumerable
+   {
         //public Course()
         //{
         //    SelectListItemsCourse=new List<SelectListItem>();
         //}
         public int Id { get; set; }
         [Required]
-        [Display(Name = "Organization")]
         public int OrganizationId  { get; set; }
         public Organization Organization { get; set; }
         [Required]
         public string Name { get; set; }
-        [StringLength(10,MinimumLength = 2)]
+        [StringLength(10,MinimumLength = 2,ErrorMessage = "you should input length max 10 and minimum 2 ")]
         public string Code { get; set; }
         public string Duration { get; set; }
         public double Credit { get; set; }
@@ -30,5 +30,10 @@ namespace Models
         public string Tags { get; set; }
         public bool IsDelete { get; set; }
         public IEnumerable<SelectListItem> SelectListItemsOraganization { get; set; }
-    }
+
+       public IEnumerator GetEnumerator()
+       {
+           throw new NotImplementedException();
+       }
+   }
 }

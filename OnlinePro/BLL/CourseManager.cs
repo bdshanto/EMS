@@ -27,11 +27,11 @@ namespace BLL
         {
             return _courseRepository.Delete(course);
         }
-       //public List<Course> GetAll()
-       // {
-       //     List<Course> courses= _courseRepository.GetAll();
-       //     return courses;
-       // }
+        public List<Course> GetAll()
+        {
+            List<Course> courses = _courseRepository.GetAll();
+            return courses;
+        }
         public List<Organization> GetAllorganization()
         {
             List<Organization> organizations = _courseRepository.GetAllorganization();
@@ -43,5 +43,13 @@ namespace BLL
            var course= _courseRepository.GetById(id);
             return course;
         }
+
+        public List<Course> GetCourseBySearch(CourseSearchCriteria criteria)
+        {
+          List<Course> courses = _courseRepository.GetCourseBySearch(criteria);
+            return courses;
+        }
+
+    
     }
 }
